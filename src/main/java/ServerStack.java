@@ -18,14 +18,14 @@ public class ServerStack {
 
     @GetMapping(path = "/find-elem-not-recursive", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public double findElemStackServer(@RequestBody Stack<Integer> stack) throws ExceptionStack {
-        return findElemStack.findSecondElemSream(stack);
+    public double findElemStackServer(@RequestBody ReceivedStack receivedStackstack) throws ExceptionStack {
+        return findElemStack.findSecondElemSream(receivedStackstack.getStack());
     }
 
     @GetMapping(path = "/find-elem-recursive", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public double findElemStackRecursiveServer(@RequestBody Stack<Integer> stack) throws ExceptionStack {
-        return findElemStack.recursiveFindSecondElem(stack);
+    public double findElemStackRecursiveServer(@RequestBody ReceivedStack receivedStack) throws ExceptionStack {
+        return findElemStack.recursiveFindSecondElem(receivedStack.getStack());
     }
 
 }

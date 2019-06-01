@@ -17,14 +17,14 @@ public class ServerSequence {
 
     @GetMapping(path = "/sequence-not-recursive", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public double findElemStackServer(@RequestBody ArrayList<Integer> arrayList) throws ExceptionList {
-        return findMaximumSequence.findMaximumSequenceStream(arrayList);
+    public double findElemStackServer(@RequestBody ReceivedArrayList receivedArrayList) throws ExceptionList {
+        return findMaximumSequence.findMaximumSequenceStream(receivedArrayList.getArrayList());
     }
 
     @GetMapping(path = "/sequence-elem-recursive", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public double findElemStackRecursiveServer(@RequestBody ArrayList<Integer> arrayList) throws ExceptionList {
-        return findMaximumSequence.recursiveFindMaximumSequence(arrayList);
+    public double findElemStackRecursiveServer(@RequestBody ReceivedArrayList receivedArrayList) throws ExceptionList {
+        return findMaximumSequence.recursiveFindMaximumSequence(receivedArrayList.getArrayList());
     }
 
 }
